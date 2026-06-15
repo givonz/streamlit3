@@ -15,3 +15,6 @@ def page():
         st.session_state["assistant"] = ChatPDF()
 
     st.header("ChatPDF")
+
+if __name__ == "__main__":
+    page()
