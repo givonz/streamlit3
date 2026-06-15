@@ -26,5 +26,20 @@ def page():
 
     st.header("ChatPDF")
 
+    st.subheader("Upload a document")
+    st.file_uploader(
+        "Upload document",
+        type=["pdf"],
+        key="file_uploader",
+        on_change=read_and_save_file,
+        label_visibility="collapsed",
+        accept_multiple_files=True,
+    )
+
+    st.session_state["ingestion_spinner"] = st.empty()
+
+    display_messages()
+    st.text_input("Message", key="user_input", on_change=process_input)
+
 if __name__ == "__main__":
     page()
