@@ -31,7 +31,7 @@ def page():
         "Upload document",
         type=["pdf"],
         key="file_uploader",
-        on_change=read_and_save_file,
+  #      on_change=read_and_save_file,
         label_visibility="collapsed",
         accept_multiple_files=True,
     )
